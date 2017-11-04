@@ -6,7 +6,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#myPage">THREE GUYS</a>
+      <a class="navbar-brand" href="main.php">THREE GUYS</a>
     </div>
     <div class="collapse navbar-collapse NavBar" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">

@@ -1,0 +1,102 @@
+body {
+  font-family: "arial-black";
+}
+
+@media screen and (max-width: 767px) {
+  #about img {
+    content: url("../Pictures/burger.jpg");
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #about img {
+    content: url("../Pictures/burger-800.jpg");
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #about img {
+    content: url("../Pictures/burger-700.jpg");
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #about img {
+    content: url("../Pictures/burger-600.jpg");
+  }
+}
+
+#titleBackground {
+  z-index: -1;
+  background-color: black;
+}
+
+#about {
+  text-shadow: 0 0 10em black;
+}
+
+#about img {
+  z-index: 0;
+  width: 100%;
+}
+
+#about h1{
+  text-shadow: 0 0 10px black;
+  font-size: 8vw;
+  color: white;
+  text-align: center;
+  position: absolute;
+  z-index: 15;
+  top: 12vw;
+  left: 0;
+  right: 0;
+
+}
+
+#about h2{
+  text-shadow: 0 0 10px black;
+  font-size: 4vw;
+  color: white;
+  text-align: center;
+  position: absolute;
+  z-index: 15;
+  top: 25vw;
+  left: 0;
+  right: 0;
+
+}
+
+#menuBody{
+  background-color: red;
+  text-shadow: 0 0 10px black;
+  font-size: 4vw;
+  color: white;
+  text-align: center;
+  
+}
+
+/*#menu h1{
+  text-shadow: 0 0 10px black;
+  font-size: 8vw;
+  color: white;
+  text-align: center;
+  position: absolute;
+  z-index: 15;
+  top: 20vw;
+  left: 0;
+  right: 0;
+
+}
+
+#menu h2{
+  text-shadow: 0 0 10px black;
+  font-size: 8vw;
+  color: white;
+  text-align: center;
+  position: absolute;
+  z-index: 15;
+  top: 12vw;
+  left: 0;
+  right: 0;
+
+}*/

@@ -3,35 +3,6 @@ body {
   background-color: white;
 }
 
-@media screen and (max-width: 767px) {
-  #about img {
-    /*content: url("../Pictures/burger.jpg");*/
-    content: url("../Pictures/darkburg/burger.jpg");
-  }
-}
-
-@media screen and (min-width: 768px) {
-  #about img {
-    /*content: url("../Pictures/burger-800.jpg");*/
-    content: url("../Pictures/darkburg/burger-800.jpg");
-  }
-}
-
-@media screen and (min-width: 992px) {
-  #about img {
-    /*content: url("../Pictures/burger-700.jpg");*/
-    content: url("../Pictures/darkburg/burger-700.jpg");
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  #about img {
-    opacity:
-    /*content: url("../Pictures/burger-600.jpg");*/
-    content: url("../Pictures/darkburg/burger-600.jpg");
-  }
-}
-
 #titleBackground {
   z-index: -1;
   background-color: black;
@@ -40,6 +11,7 @@ body {
 #about {
   margin-top: -2vw;
   text-shadow: 0 0 10em black;
+  border-bottom: 0.25em solid #770000;
 }
 
 #about img {
@@ -85,7 +57,6 @@ hr {
   font-size: 4vw;
   color: white;
   text-align: center;
-
 }
 
 /*What our customers say
@@ -120,6 +91,67 @@ h4 {
 .custTalk h3 {
   font-size: 2vw;
   text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  #about img {
+    /*content: url("../Pictures/burger.jpg");*/
+    content: url("../Pictures/TitleBackgroundMobile.png");
+  }
+  #about h1 {
+	 top: 35vw;
+	 font-size: 10vw;
+  }
+  #about h2 {
+	 top: 52vw;
+	 font-size: 3vw;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #about img {
+    /*content: url("../Pictures/burger-800.jpg");*/
+    content: url("../Pictures/TitleBackgroundMobile.png");
+  }
+  #about h1 {
+	 top: 35vw;
+	 font-size: 10vw;
+  }
+  #about h2 {
+	 top: 50vw;
+	 font-size: 3vw;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #about img {
+    /*content: url("../Pictures/burger-700.jpg");*/
+    content: url("../Pictures/TitleBackground.png");
+  }
+  #about h1 {
+	  top: 12vw;
+	  font-size: 8vw;
+  }
+  #about h2 {
+	  top: 25vw;
+	  font-size: 2vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #about img {
+    opacity:
+    /*content: url("../Pictures/burger-600.jpg");*/
+    content: url("../Pictures/TitleBackground.png");
+  }
+  #about h1 {
+	  top: 12vw;
+	  font-size: 8vw;
+  }
+  #about h2 {
+	  top: 25vw;
+	  font-size: 2vw;
+  }
 }
 
 

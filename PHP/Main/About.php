@@ -4,10 +4,10 @@
   <div class="row">
     <img src="../../Pictures/burger.jpg" />
     <div id="titleBackground">
-      <h1>Three Guys</h1>
-      <h2>"Never fresh, always frozen"<h2>
+      <h1>THREE GUYS</h1>
+      <h2 style="margin: 0.1em">"Never fresh, always frozen"<h2>
         <div class="hrdiv">
-          <hr>
+          <hr  style="margin-top: 2em;"/>
         </div>
     </div>
   </div>

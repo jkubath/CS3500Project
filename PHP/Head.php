@@ -14,7 +14,7 @@
         <li><a href="#order"><div class="nav-option">ORDER</div></a></li>
         <li><a href="#locations"><div class="nav-option">LOCATIONS</div></a></li>
         <li><a href="#contact"><div class="nav-option">CONTACT</div></a></li>
-		<li><a href="#login"><div class="nav-option">LOGIN</div></a></li>
+		    <li><a href="loginPage.php"><div class="nav-option">LOGIN</div></a></li>
       </ul>
     </div>
   </div>

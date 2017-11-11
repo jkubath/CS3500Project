@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Theme Made By www.w3schools.com - No Copyright -->
   <title>Three Guys</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,8 +8,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="../../CSS/Head.css" type="text/css">
-  <link rel="stylesheet" href="../../CSS/Menu.css" type="text/css">
+  <link rel="stylesheet" href="../CSS/Head.css" type="text/css">
+  <link rel="stylesheet" href="../CSS/Menu.css" type="text/css">
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
@@ -202,10 +201,10 @@
 	itemName2.onmouseout = function() {image2.src = "../../Pictures/UnlitBackground.png"; picture2.src = "../../Pictures/UnlitDoubleCheeseburger.png"; name2.style.color = "#999999";};
 	picture2.onmouseover = function() {image2.src = "../../Pictures/LitBackground.png"; picture2.src = "../../Pictures/LitDoubleCheeseburger.png"; name2.style.color = "#FFFFFF";};
 	picture2.onmouseout = function() {image2.src = "../../Pictures/UnlitBackground.png"; picture2.src = "../../Pictures/UnlitDoubleCheeseburger.png"; name2.style.color = "#999999";};
-	
-	
-	
-	
+
+
+
+
 	// Get the modal
 	var modal = document.getElementById('content');
 
@@ -217,7 +216,7 @@
 	// Get the <span> element that closes the modal
 	var span = document.getElementsByClassName("close")[0];
 
-	// When the user clicks the button, open the modal 
+	// When the user clicks the button, open the modal
 	btn.onclick = function() {
 		modal.style.display = "block";
 		modal.style.animationName = "fadeIn";
@@ -246,9 +245,3 @@
 </script>
 </body>
 </html>
-
-
-
-
-
-

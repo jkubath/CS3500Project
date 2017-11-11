@@ -1,0 +1,94 @@
+.loginContainer {
+  text-align: center;
+  margin-top: 5vw;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  border-style: solid;
+  border-width: thin;
+  background: linear-gradient(#FF3333, #991111);
+  background: -webkit-linear-gradient(#FF3333, #991111);
+}
+
+h1 {
+  color: white;
+}
+
+.loginNav {
+  background-color: grey;
+  border-style: solid;
+  border-width: thin;
+  margin: 1vw;
+  padding: 1vw;
+}
+
+.loginNav ul {
+  text-align: center;
+
+
+}
+
+.loginNav ul li {
+  width: 100%;
+  display: inline;
+  margin: 1vw;
+  font-size: 4vw;
+  text-align: center;
+  border-style: solid;
+  border-width: thin;
+
+}
+
+.link {
+  color:black;
+  font-size: 2vw;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.myTable {
+  text-align: center;
+}
+
+
+#tableUsername {
+  vertical-align: top;
+}
+
+#tableAddress {
+  margin-left: 4em;
+}
+
+#tableAddress input {
+  text-align: left;
+  width: 100%;
+}
+
+#button {
+  text-align: center;
+}
+
+.login input {
+  font-size: 2vw;
+  padding: .5em;
+  background-color: white;
+  border-bottom: solid;
+  border-width: thin;
+  margin: .5em;
+}
+
+.register input {
+  font-size: 1vw;
+  padding: .5em;
+  background-color: white;
+  border-bottom: solid;
+  border-width: thin;
+  margin: .5em;
+}
+
+.submit:hover {
+  background-color: grey;
+}

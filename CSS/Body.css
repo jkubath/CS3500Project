@@ -68,6 +68,9 @@ h4 {
     font-weight: 400;
     margin-bottom: 30px;
 }
+.custTalk {
+  background-color: white;
+}
 .carousel-control.right, .carousel-control.left {
     background-image: none;
     color: #f4511e !important;
@@ -151,6 +154,73 @@ h4 {
 	  top: 25vw;
 	  font-size: 2vw;
   }
+}
+
+input[type="submit"] {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+input[type="submit"]:hover {
+  opacity: 1 !important;
+  text-decoration: none;
+  -webkit-transform: scale(1.1)!important;
+  -ms-transform: scale(1.1)!important;
+  transform: scale(1.1)!important;
+}
+
+legend {
+  font-size: 3vw;
+  color: black;
+  padding-bottom: 50px;
+  font-style: italic;
+}
+
+textarea {
+  max-width: 100%;
+}
+
+.left-addon {
+    position: relative;
+}
+
+.form-group {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.form-group-ta {
+  padding-top: 50px;
+  padding-bottom: 25px;
+}
+
+.contactusform {
+  background-color: #AA0E20;
+  padding-top: 50px;
+  color: black;
+}
+
+/* style icon */
+.left-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+  color: grey;
+  margin-top: 42.5px;
+  margin-left: 15px;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+
+.control-label {
+  font-size: 1.2vw !important;
 }
 
 

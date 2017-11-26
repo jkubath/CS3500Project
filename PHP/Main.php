@@ -26,7 +26,7 @@
 	  include "Head.php";
 	  include "Title.php";
 	  include "CustomerReviews.php";
-      include "ContactUs.php";
+    include "ContactUs.php";
 	  include "Footer.php";
 ?>
 
@@ -41,7 +41,7 @@
 			document.location.href = "./LoginPage.php";
 		}
 	}
-	
+
 	function submitComment() {
 		xmlhttp = new XMLHttpRequest();
 		var name = "";
@@ -61,12 +61,12 @@
 		document.getElementById("commentArea").value = "";
 		xmlhttp.open("GET", "SubmitComment.php?name=" + name + "&email=" + email + "&tel=" + tel + "&commentType=" + commentType + "&commentArea=" + commentArea, true);
 		xmlhttp.send();
-		
-		
-		
+
+
+
 		alert("Thank you for your " + commentType + ".  Your feedback is highly appreciated.");
 	}
-	
+
 	checkRegistration();
 	checkLogin();
 </script>

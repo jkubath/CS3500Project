@@ -12,7 +12,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="Menu.php"><div class="nav-option">MENU</div></a></li>
         <li><a href="Order.php"><div class="nav-option">ORDER</div></a></li>
-        <li><a href="#locations"><div class="nav-option">LOCATIONS</div></a></li>
+        <li><a href="Location.php"><div class="nav-option">LOCATIONS</div></a></li>
 		<?php
 			try {
 			  $pdo = new PDO("mysql:host=localhost;dbname=restaurant", "root", "");
@@ -20,8 +20,8 @@
 			} catch (PDOException $e) {
 			  die($e->getMessage());
 			}
-		
-		
+
+
 			if (!isset($_SESSION["username"])) {
 				$_SESSION["username"] = "";
 			}
@@ -62,7 +62,7 @@
 						}
 					}
 				}
-				
+
 				echo "</ul></li>";
 			} else {
 				echo  "<li><a href=\"LoginPage.php\"><div class=\"nav-option\">LOGIN</div></a></li>";
@@ -76,7 +76,7 @@
 <script>
 	function logout() {
 		xmlhttp = new XMLHttpRequest();
-		
+
 		xmlhttp.open("GET", "Logout.php", true);
 		xmlhttp.send();
 		window.setTimeout(innerLogout, 25);

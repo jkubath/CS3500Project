@@ -2,7 +2,6 @@
     padding: 20px;
     padding-left: 0px;
     font-size: 50px;
-    /*width: 50px;*/
     text-align: center;
     text-decoration: none;
     color: rgba(186, 186, 186, .6);
@@ -40,4 +39,6 @@ footer .fa-instagram:hover {
 
 footer {
   background-color: black;
+  padding-bottom: 10em;
+  padding-top: 1em;
 }

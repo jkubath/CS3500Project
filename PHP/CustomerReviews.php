@@ -1,27 +1,48 @@
 <div class="custTalk">
-<h3>What our customers say</h3>
+<h3>WHAT YOU GUYS SAY</h3>
 <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <h5>"This is God, speaking to us in food."<br><span>Marshall Eriksen, Lawyer, Goliath National Bank</span></h5>
-    </div>
-    <div class="item">
-      <h5>"These burgers put mine to shame!"<br><span>Bob, Restaurant Owner, Bob's Burgers</span></h5>
-    </div>
-    <div class="item">
-      <h5>"Could I... BE any more happy with these burgers?"<br><span>Chandler Bing, Actor, FriendsAlot</span></h5>
-    </div>
-  </div>
-
-  <!-- Left and right controls -->
+  
+  <?php
+	try {
+	  $pdo = new PDO("mysql:host=localhost;dbname=restaurant", "root", "");
+	  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	} catch (PDOException $e) {
+	  die($e->getMessage());
+	}
+	
+	$sql = "SELECT *
+			FROM user_comments uc, user_information ui
+			WHERE uc.Selected = 'y' AND uc.Username = ui.Username;";
+	$result = $pdo->query($sql);
+	/*
+	$count = $result->rowCount();
+	
+	echo "<ol class=\"carousel-indicators\">";
+	for ($i = 0; $i < $count; $i++) {
+		echo "<li data-target\"#myCarousel\"";
+		if ($i == 0) {
+			echo " class=\"active\"";
+		}
+		echo "></li>";
+	}
+	echo "</ol>";
+	*/
+	$commentNumber = 1;
+	echo "<div class=\"carousel-inner\" role=\"listbox\">";
+	foreach($result as $row) {
+		if ($commentNumber == 1) {
+			echo "<div class=\"item active\">";
+		} else {
+			echo "<div class=\"item\">";
+		}
+		echo "<h5>\"" . $row["Comment"] . "\"<br /><span>" . $row["FirstName"] . " " . $row["LastName"] . " from " . $row["City"] . ", " . $row["State"] . "</span></h5>";
+		echo "</div>";
+		$commentNumber++;
+	}
+	echo "</div>";
+  ?>
+  
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>

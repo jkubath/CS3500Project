@@ -99,7 +99,7 @@ body {
 
 
 .menu {
-	padding-top: 100px;
+	padding-top: 125px;
 	color: #999999;
 }
 
@@ -128,6 +128,18 @@ body {
 .menu-item-name img {
 	position: absolute;
 	z-index: 1;
+}
+
+.ingredient-list {
+	text-decoration: underline;
+}
+
+#restaurant-selector {
+	float: right;
+	margin-right: 1em;
+	margin-top: 3.5em;
+	max-width: 90%;
+	font-size: 1.5em;
 }
 
 @media screen and (max-width: 767px) {
@@ -218,6 +230,10 @@ body {
 	  top: 2.5vw;
   }
   
+  .fat {
+	  top: 2.5vw;
+  }
+  
   .burgers-underline {
 	  width: 60%;
   }
@@ -273,6 +289,10 @@ body {
 	  top: 2.0vw;
   }
   
+  .fat {
+	  top: 2.0vw;
+  }
+  
   .burgers-underline {
 	  width: 50%;
   }
@@ -325,6 +345,10 @@ body {
   }
   
   .carbs {
+	  top: 1.25vw;
+  }
+  
+  .fat {
 	  top: 1.25vw;
   }
   

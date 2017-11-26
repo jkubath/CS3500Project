@@ -1,7 +1,7 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Theme Made By www.w3schools.com - No Copyright -->
   <title>Three Guys</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,64 +16,60 @@
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
 <?php
-  include "Head.php";
-  include "Title.php";
-  include "CustomerReviews.php";
-  ?>
-<!-- /////////////////////////////////////FORM///////////////////////////////////////// -->
-  <div class="container-fluid text-center contactusform ">
-    <form class="contactus" action="http://www.randyconnolly.com/tests/process.php" method="post" id="Contact">
-      <fieldset>
-        <legend>Tell us how you really feel!</legend>
+	if (!isset($_SESSION["username"])) {
+		$_SESSION["username"] = "";
+	}
+	if (((!isset($_SESSION["login"])) || (strcmp($_SESSION["login"], "register") == 0)) && ((!isset($_SESSION["registrationSuccess"])) || (strcmp($_SESSION["registrationSuccess"], "false") != 0))) {
+		$_SESSION["login"] = "login";
+	}
 
-  <?php
-    /*PROBABLY NEED TO CHANGE THE IF STATEMENT. ALSO NEED TO CHANGE THE ACTION METHOD OF THE FORM*/
-    if (empty($_GET)) {
+	  include "Head.php";
+	  include "Title.php";
+	  include "CustomerReviews.php";
+      include "ContactUs.php";
+	  include "Footer.php";
+?>
 
-          echo '<div class="form-group left-addon col-md-6">
-              <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                <label class="control-label">Name</label>
-                <input type="text" class="form-control" placeholder="Your Name" name="name"/>
-            </div>
-            <div class="form-group left-addon col-md-6">
-              <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                <label class="control-label">Email</label>
-                <input type="email" class="form-control" placeholder="email@gmail.com" name="email"/>
-            </div>
-            <div class="form-group left-addon col-md-6">
-              <span class="glyphicon glyphicon-earphone form-control-feedback"></span>
-                <label class="control-label">Phone</label>
-                <input type="tel" class="form-control" placeholder="123-123-1234" name="tel" />
-            </div>
-            <div class="form-group col-md-6">
-              <label class="control-label" for="contacttype">Why are you contacting us? (select one):</label>
-              <select class="form-control" id="contacttype" name="contacttype">
-                <option value="Comment">Comment</option>
-                <option value="Concern">Concern</option>
-              </select>
-            </div>';
-    }
-    else {
+<script>
+	function checkLogin() {
+		if (<?php if (isset($_SESSION["loginSuccess"])) { echo "\"" . $_SESSION["loginSuccess"] . "\""; } else { echo ""; } ?> == "false") {
+			document.location.href = "./LoginPage.php";
+		}
+	}
+	function checkRegistration() {
+		if (<?php if (isset($_SESSION["registrationSuccess"])) { echo "\"" . $_SESSION["registrationSuccess"] . "\""; } else { echo ""; } ?> == "false") {
+			document.location.href = "./LoginPage.php";
+		}
+	}
+	
+	function submitComment() {
+		xmlhttp = new XMLHttpRequest();
+		var name = "";
+		var email = "";
+		var tel = "";
+		if (<?php if (strcmp($_SESSION["username"], "") == 0) { echo "\"false\""; } else { echo "\"true\""; } ?> == "false") {
+			name = document.getElementById("name").value;
+			email = document.getElementById("email").value;
+			tel = document.getElementById("tel").value;
+			document.getElementById("name").value = "";
+			document.getElementById("email").value = "";
+			document.getElementById("tel").value = "";
+		}
+		var commentType = document.getElementById("contactType").value;
+		var commentArea = document.getElementById("commentArea").value;
+		document.getElementById("contactType").value = "comment";
+		document.getElementById("commentArea").value = "";
+		xmlhttp.open("GET", "SubmitComment.php?name=" + name + "&email=" + email + "&tel=" + tel + "&commentType=" + commentType + "&commentArea=" + commentArea, true);
+		xmlhttp.send();
+		
+		
+		
+		alert("Thank you for your " + commentType + ".  Your feedback is highly appreciated.");
+	}
+	
+	checkRegistration();
+	checkLogin();
+</script>
 
-      echo      '<div class="form-group col-md-4 col-md-offset-4 makesmall">
-              <label class="control-label" for="contacttype">Why are you contacting us? (select one):</label>
-              <select class="form-control" id="contacttype" name="contacttype">
-                <option value="Comment">Comment</option>
-                <option value="Concern">Concern</option>
-              </select>
-            </div>';
-    }
-   ?>
-      </fieldset>
-    </form>
-  <div class="form-group-ta col-md-4 col-md-offset-4">
-    <textarea rows="6" cols="100" name="comment" form="Contact" placeholder="Enter your thoughts here..."></textarea>
-  </div>
-  <div class="form-group col-md-4 col-md-offset-4 text-center">
-    <input form="Contact" type="submit" value="Submit">
-  </div>
-</div>
-<!-- /////////////////////////////////////FORM///////////////////////////////////////// -->
-<?php include "Footer.php"; ?>
 </body>
 </html>

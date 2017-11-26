@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2017 at 08:22 PM
+-- Generation Time: Nov 26, 2017 at 10:07 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -241,6 +241,24 @@ CREATE TABLE `order_products` (
   `IngredientID` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `order_products`
+--
+
+INSERT INTO `order_products` (`OrderID`, `ItemNumber`, `ProductName`, `IngredientID`) VALUES
+(2, 1, 'BBQ Burger', 1),
+(2, 1, 'BBQ Burger', 2),
+(2, 1, 'BBQ Burger', 3),
+(2, 1, 'BBQ Burger', 15),
+(2, 1, 'BBQ Burger', 16),
+(3, 1, 'Diet Coke', 24),
+(3, 2, 'Diet Coke', 24),
+(3, 3, 'Bacon Fries', 3),
+(3, 3, 'Bacon Fries', 15),
+(3, 3, 'Bacon Fries', 21),
+(4, 1, 'Cherry Coke', 25),
+(4, 2, 'Cherry Coke', 25);
+
 -- --------------------------------------------------------
 
 --
@@ -254,6 +272,15 @@ CREATE TABLE `order_user` (
   `DatePlaced` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `DateFulfilled` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `order_user`
+--
+
+INSERT INTO `order_user` (`OrderID`, `StoreNumber`, `Username`, `DatePlaced`, `DateFulfilled`) VALUES
+(2, 1, 'employee1', '2017-11-26 20:05:04', NULL),
+(3, 1, 'employee1', '2017-11-26 20:31:12', NULL),
+(4, 1, 'employee1', '2017-11-26 20:34:07', NULL);
 
 -- --------------------------------------------------------
 
@@ -844,7 +871,7 @@ ALTER TABLE `employee_names`
 -- AUTO_INCREMENT for table `order_user`
 --
 ALTER TABLE `order_user`
-  MODIFY `OrderID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `OrderID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `store_locations`
 --

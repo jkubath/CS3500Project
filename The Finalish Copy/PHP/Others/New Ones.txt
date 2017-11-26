@@ -1,5 +1,0 @@
-CustomerOrders.php
-DecideUserType.php
-DisplayManagerStoreSelection.php
-DisplayEmployeeManagerLogin.php
-CheckManagerLogin.php

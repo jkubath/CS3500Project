@@ -10,6 +10,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="../CSS/Head.css" type="text/css">
+  <link rel="stylesheet" href="../CSS/CustomerOrders.css" type="text/css">
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
@@ -17,13 +18,6 @@
 	include "Head.php";
 ?>
 
-<!-- This will do a check first to see whether or not the user is a manager.
-	 If the user is not a manager, a pop-up will come up that will require a manager's
-	 username/password.  Once a valid username/password has been put in, all the current
-	 orders for the store for which the employee works will be shown.  If the user is
-	 already a manager, if the manager manages more than one store, a drop-down with all the
-	 manager's stores will be shown from which the user will select the store they want
-	 to manage. -->
 	 
 <div id="loginArea"></div>
 <div id="locationSelection"></div>

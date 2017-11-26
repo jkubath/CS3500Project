@@ -11,7 +11,7 @@
 
 
 	echo "<form>";
-	echo "<select style=\"margin-top: 10em;\" id=\"restaurant-selector\" name=\"restaurantSelection\" onchange=\"displayCustomerOrders(this.value);\">";
+	echo "<select id=\"restaurant-selector\" name=\"restaurantSelection\" onchange=\"displayCustomerOrders(this.value);\">";
 	echo "<option value=\"0\">SELECT A RESTAURANT</option>";
 			
 			

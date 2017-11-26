@@ -1,5 +1,5 @@
 <?php
-
+	session_start();
 echo('
 <!DOCTYPE html >
   <head>
@@ -29,7 +29,7 @@ echo('
   </head>
 
   <body>');
-  include 'head.php';
+  include 'Head.php';
   echo('
     <div id="map"></div>
 

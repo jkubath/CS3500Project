@@ -20,8 +20,8 @@
 			} catch (PDOException $e) {
 			  die($e->getMessage());
 			}
-
-
+		
+		
 			if (!isset($_SESSION["username"])) {
 				$_SESSION["username"] = "";
 			}
@@ -62,7 +62,7 @@
 						}
 					}
 				}
-
+				
 				echo "</ul></li>";
 			} else {
 				echo  "<li><a href=\"LoginPage.php\"><div class=\"nav-option\">LOGIN</div></a></li>";
@@ -76,7 +76,7 @@
 <script>
 	function logout() {
 		xmlhttp = new XMLHttpRequest();
-
+		
 		xmlhttp.open("GET", "Logout.php", true);
 		xmlhttp.send();
 		window.setTimeout(innerLogout, 25);

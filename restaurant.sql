@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2017 at 06:29 PM
+-- Generation Time: Nov 26, 2017 at 08:22 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -266,24 +266,26 @@ CREATE TABLE `store_locations` (
   `Address` varchar(255) NOT NULL,
   `City` varchar(40) NOT NULL,
   `State` varchar(2) NOT NULL,
-  `ZipCode` int(5) NOT NULL
+  `ZipCode` int(5) NOT NULL,
+  `Latitude` double NOT NULL,
+  `Longitude` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `store_locations`
 --
 
-INSERT INTO `store_locations` (`StoreNumber`, `Address`, `City`, `State`, `ZipCode`) VALUES
-(1, '4310 Stadium Drive', 'Kalamazoo', 'MI', 49007),
-(2, '3900 Sprinkle Road', 'Kalamazoo', 'MI', 49001),
-(3, '5530 Gull Road', 'Kalamazoo', 'MI', 49001),
-(4, '6925 South Westnedge Avenue', 'Portage', 'MI', 49002),
-(5, '10280 Miller Drive', 'Galesburg', 'MI', 49053),
-(6, '710 North Grand Street', 'Schoolcraft', 'MI', 49087),
-(7, '1016 West Michigan Avenue', 'Three Rivers', 'MI', 49093),
-(8, '1160 East Michigan Avenue', 'Battle Creek', 'MI', 49014),
-(9, '829 South Kalamazoo Street', 'Paw Paw', 'MI', 49097),
-(10, '889 Marshall Street', 'Allegan', 'MI', 49010);
+INSERT INTO `store_locations` (`StoreNumber`, `Address`, `City`, `State`, `ZipCode`, `Latitude`, `Longitude`) VALUES
+(1, '4310 Stadium Drive', 'Kalamazoo', 'MI', 49007, 42.2710251, -85.6445881),
+(2, '3900 Sprinkle Road', 'Kalamazoo', 'MI', 49001, 42.2520689, -85.533597),
+(3, '5530 Gull Road', 'Kalamazoo', 'MI', 49001, 42.3232286, -85.5232593),
+(4, '6925 South Westnedge Avenue', 'Portage', 'MI', 49002, 42.2165371, -85.5908228),
+(5, '10280 Miller Drive', 'Galesburg', 'MI', 49053, 42.2750649, -85.4304368),
+(6, '710 North Grand Street', 'Schoolcraft', 'MI', 49087, 42.1220857, -85.6386873),
+(7, '1016 West Michigan Avenue', 'Three Rivers', 'MI', 49093, 41.942136, -85.6478753),
+(8, '1160 East Michigan Avenue', 'Battle Creek', 'MI', 49014, 42.3099543, -85.1275187),
+(9, '829 South Kalamazoo Street', 'Paw Paw', 'MI', 49097, 42.2097863, -85.8929632),
+(10, '889 Marshall Street', 'Allegan', 'MI', 49010, 42.5175762, -85.8384949);
 
 -- --------------------------------------------------------
 

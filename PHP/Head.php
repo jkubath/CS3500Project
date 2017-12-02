@@ -26,15 +26,15 @@
 				$_SESSION["username"] = "";
 			}
 			if (strcmp($_SESSION["username"], "") != 0) {
-				echo "<li class=\"dropdown\"><a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\"><div class=\"nav-option\">OTHER <span class=\"caret\"></span></div></a>";
+				echo "<li class=\"dropdown\"><a class=\"dropdown-toggle\" id=\"dropdown-button\" data-toggle=\"dropdown\" href=\"#\"><div class=\"nav-option\">OTHER <span class=\"caret\"></span></div></a>";
 				echo "<ul class=\"dropdown-menu\">";
-				echo "<li onclick=\"logout()\">LOGOUT</li>";
+				echo "<li id=\"logout\" onclick=\"logout()\">LOGOUT</li>";
 				$sql = "SELECT EmployeeID
 						FROM employee_accounts
 						WHERE Username = '" . $_SESSION["username"] . "';";
 				$result = $pdo->query($sql);
 				while ($row = $result->fetch()) {
-					echo "<li><a href=\"CustomerOrders.php\">CUSTOMER ORDERS</a></li>";
+					echo "<li><a class=\"otherOption\" href=\"CustomerOrders.php\">CUSTOMER ORDERS</a></li>";
 					$sql2 = "SELECT *
 							 FROM employee_stores
 							 WHERE EmployeeID = " . $row["EmployeeID"] . ";";
@@ -50,14 +50,14 @@
 						}
 					}
 					if ($isManager) {
-						echo "<li><a href=\"MenuEditor.php\">MENU EDITOR</a></li>";
-						echo "<li><a href=\"EmployeeInfo.php\">EMPLOYEE INFO</a></li>";
+						echo "<li><a class=\"otherOption\" href=\"MenuEditor.php\">MENU EDITOR</a></li>";
+						echo "<li><a class=\"otherOption\" href=\"RestaurantInfo.php\">RESTAURANT INFO</a></li>";
 						$sql3 = "SELECT COUNT(StoreNumber) AS NumStores
 								 FROM store_locations;";
 						$result3 = $pdo->query($sql3);
 						while ($row3 = $result3->fetch()) {
 							if ($row3["NumStores"] == $numStoresManaged) {
-								echo "<li><a href=\"RestaurantInfo.php\">RESTAURANT INFO</a></li>";
+								echo "<li><a class=\"otherOption\" href=\"ProductEditor.php\">PRODUCT EDITOR</a></li>";
 							}
 						}
 					}

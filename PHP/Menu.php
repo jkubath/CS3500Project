@@ -42,19 +42,21 @@ if (!(isset($_SESSION["restaurantNumber"]))) {
 				$restaurantNumber = $_SESSION["restaurantNumber"];
 				
 				
-				$sql = "SELECT *
+				$sql = "SELECT COUNT(spo.ProductName) AS NumProducts
 						FROM store_product_offerings spo
-						WHERE spo.StoreNumber = '" . $restaurantNumber . "';";
+						GROUP BY spo.StoreNumber;";
 				$result = $pdo->query($sql);
 
-				$numItems = 0;
-				foreach ($result as $row) {
-					$numItems++;
+				$maxNumItems = -1;
+				while ($row = $result->fetch()) {
+					if ($row["NumProducts"] > $maxNumItems) {
+						$maxNumItems = $row["NumProducts"];
+					}
 				}
 				
 				echo "var background = document.getElementById(\"fading-background\");";
 
-				for ($i = 1; $i <= $numItems; $i++) {
+				for ($i = 1; $i <= $maxNumItems; $i++) {
 					echo "var image" . $i . " = document.getElementById(\"menu-item-" . $i . "\");";
 					echo "var itemName" . $i . " = document.getElementById(\"menu-item-name-" . $i . "\");";
 					echo "var name" . $i . " = document.getElementById(\"name-" . $i . "\");";
@@ -107,7 +109,7 @@ if (!(isset($_SESSION["restaurantNumber"]))) {
 				}
 				echo "window.onclick = function(event) {";
 				echo "if (event.target == background) {";
-				for ($i = 1; $i < $numItems; $i++) {
+				for ($i = 1; $i < $maxNumItems; $i++) {
 					echo "modal" . $i . ".style.animationName = \"fadeOut\";";
 					echo "modal" . $i . ".style.animationDelay = \"0s\";";
 				}

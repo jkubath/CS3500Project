@@ -28,6 +28,7 @@
 	$result2 = $pdo->query($sql2);
 	$validManager = 0;
 	while ($row = $result->fetch()) {
+		$result2 = $pdo->query($sql2);
 		while ($row2 = $result2->fetch()) {
 			if ($row["StoreNumber"] == $row2["StoreNumber"]) {
 				$validManager = 1;

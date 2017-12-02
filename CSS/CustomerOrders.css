@@ -77,6 +77,17 @@ body {
 		margin-bottom: 0.4vw;
 		font-size: 3vw;
 	}
+	
+	.finishOrder {
+		font-size: 5vw;
+		text-align: right;
+	}
+	
+	#noOrders {
+		color: white;
+		text-align: center;
+		font-size: 6vw;
+	}
 }
 
 @media screen and (min-width: 768px) {
@@ -132,7 +143,7 @@ body {
 		padding-top: 2vh;
 		padding-right: 5vw;
 		padding-bottom: 4vh;
-		margin-bottom: 4vh;
+		margin-bottom: 3vh;
 	}
 	
 	.orderNumber {
@@ -151,6 +162,17 @@ body {
 		margin-top: 0.4vw;
 		margin-bottom: 0.4vw;
 		font-size: 2.25vw;
+	}
+	
+	.finishOrder {
+		font-size: 4vw;
+		text-align: right;
+	}
+	
+	#noOrders {
+		color: white;
+		text-align: center;
+		font-size: 4vw;
 	}
 }
 
@@ -195,36 +217,48 @@ body {
 	}
 	
 	#allDisplayedOrders {
-		padding-top: 10vh;
-		padding-left: 5vw;
-		padding-right: 5vw;
-		padding-bottom: 10vh;
+		padding-top: 8vh;
+		padding-left: 4vw;
+		padding-right: 4vw;
+		padding-bottom: 8vh;
 	}
 	
 	.displayedOrder {
 		background-color: white;
-		padding-left: 5vw;
-		padding-top: 2vh;
-		padding-right: 5vw;
-		padding-bottom: 4vh;
+		padding-left: 4vw;
+		padding-top: 1.5vh;
+		padding-right: 4vw;
+		padding-bottom: 3vh;
+		margin-bottom: 2vh;
 	}
 	
 	.orderNumber {
-		font-size: 4vw;
+		font-size: 3.5vw;
 	}
 	
 	.itemName {
-		padding-left: 4vw;
+		padding-left: 3vw;
 		margin-top: 0;
 		margin-bottom: 0;
-		font-size: 3vw;
+		font-size: 2.75vw;
 	}
 	
 	.itemIngredient {
 		padding-left: 6vw;
 		margin-top: 0.4vw;
 		margin-bottom: 0.4vw;
-		font-size: 2.25vw;
+		font-size: 2vw;
+	}
+	
+	.finishOrder {
+		font-size: 3vw;
+		text-align: right;
+	}
+	
+	#noOrders {
+		color: white;
+		text-align: center;
+		font-size: 3vw;
 	}
 }
 
@@ -277,27 +311,39 @@ body {
 	
 	.displayedOrder {
 		background-color: white;
-		padding-left: 5vw;
-		padding-top: 2vh;
-		padding-right: 5vw;
-		padding-bottom: 4vh;
+		padding-left: 4vw;
+		padding-top: 1.5vh;
+		padding-right: 4vw;
+		padding-bottom: 3vh;
+		margin-bottom: 2vh;
 	}
 	
 	.orderNumber {
-		font-size: 4vw;
+		font-size: 2.75vw;
 	}
 	
 	.itemName {
-		padding-left: 4vw;
+		padding-left: 3vw;
 		margin-top: 0;
 		margin-bottom: 0;
-		font-size: 3vw;
+		font-size: 2.25vw;
 	}
 	
 	.itemIngredient {
 		padding-left: 6vw;
 		margin-top: 0.4vw;
 		margin-bottom: 0.4vw;
-		font-size: 2.25vw;
+		font-size: 1.75vw;
+	}
+	
+	.finishOrder {
+		font-size: 3vw;
+		text-align: right;
+	}
+	
+	#noOrders {
+		color: white;
+		text-align: center;
+		font-size: 2.5vw;
 	}
 }

@@ -99,6 +99,16 @@
 		xmlhttp.send();
 	}
 	
+	function finishOrder(orderID, restaurantNumber) {
+		xmlhttp = new XMLHttpRequest();
+		xmlhttp.open("GET", "FinishOrder.php?orderID=" + orderID, true);
+		xmlhttp.send();
+		window.setTimeout(innerFinishOrder, 10, restaurantNumber);
+		function innerFinishOrder(restaurantNumber) {
+			displayCustomerOrders(restaurantNumber);
+		}
+	}
+	
 
 
 	decideUserType();

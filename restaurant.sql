@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2017 at 10:07 PM
+-- Generation Time: Nov 30, 2017 at 04:50 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -64,40 +64,6 @@ INSERT INTO `employee_accounts` (`EmployeeID`, `Username`) VALUES
 (10024, 'employee8'),
 (10025, 'employee9'),
 (10026, 'employee10');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `employee_names`
---
-
-CREATE TABLE `employee_names` (
-  `EmployeeID` int(5) NOT NULL,
-  `FirstName` varchar(60) NOT NULL,
-  `LastName` varchar(60) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `employee_names`
---
-
-INSERT INTO `employee_names` (`EmployeeID`, `FirstName`, `LastName`) VALUES
-(10001, 'Matt', 'Peter'),
-(10002, 'Jonah', 'Kubath'),
-(10003, 'Greg', 'Smith'),
-(10004, 'Joanna', 'Shaffer'),
-(10005, 'Jonathon', 'Sheppard'),
-(10006, 'Pablo', 'Craig'),
-(10007, 'Waylon', 'Dalton'),
-(10008, 'Justine', 'Henderson'),
-(10009, 'Abdullah', 'Lang'),
-(10010, 'Marcus', 'Cruz'),
-(10011, 'Thalia', 'Cobb'),
-(10012, 'Mathias', 'Little'),
-(10013, 'Eddie', 'Randolph'),
-(10014, 'Angela', 'Walker'),
-(10015, 'Lia', 'Shelton'),
-(10016, 'Hadassah', 'Hartman');
 
 -- --------------------------------------------------------
 
@@ -241,24 +207,6 @@ CREATE TABLE `order_products` (
   `IngredientID` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `order_products`
---
-
-INSERT INTO `order_products` (`OrderID`, `ItemNumber`, `ProductName`, `IngredientID`) VALUES
-(2, 1, 'BBQ Burger', 1),
-(2, 1, 'BBQ Burger', 2),
-(2, 1, 'BBQ Burger', 3),
-(2, 1, 'BBQ Burger', 15),
-(2, 1, 'BBQ Burger', 16),
-(3, 1, 'Diet Coke', 24),
-(3, 2, 'Diet Coke', 24),
-(3, 3, 'Bacon Fries', 3),
-(3, 3, 'Bacon Fries', 15),
-(3, 3, 'Bacon Fries', 21),
-(4, 1, 'Cherry Coke', 25),
-(4, 2, 'Cherry Coke', 25);
-
 -- --------------------------------------------------------
 
 --
@@ -270,17 +218,9 @@ CREATE TABLE `order_user` (
   `StoreNumber` int(5) NOT NULL,
   `Username` varchar(40) NOT NULL,
   `DatePlaced` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `DateFulfilled` timestamp NULL DEFAULT NULL
+  `DateFulfilled` timestamp NULL DEFAULT NULL,
+  `FulfilledBy` varchar(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `order_user`
---
-
-INSERT INTO `order_user` (`OrderID`, `StoreNumber`, `Username`, `DatePlaced`, `DateFulfilled`) VALUES
-(2, 1, 'employee1', '2017-11-26 20:05:04', NULL),
-(3, 1, 'employee1', '2017-11-26 20:31:12', NULL),
-(4, 1, 'employee1', '2017-11-26 20:34:07', NULL);
 
 -- --------------------------------------------------------
 
@@ -546,6 +486,7 @@ INSERT INTO `store_product_offerings` (`StoreNumber`, `ProductName`, `ProductTyp
 (5, 'Fries', 'Side'),
 (5, 'Hamburger', 'Burger'),
 (5, 'Mushroom Burger', 'Burger'),
+(5, 'Powerade', 'Drink'),
 (5, 'Ranch Burger', 'Burger'),
 (5, 'Sprite', 'Drink'),
 (5, 'Veggie Burger', 'Burger'),
@@ -561,7 +502,6 @@ INSERT INTO `store_product_offerings` (`StoreNumber`, `ProductName`, `ProductTyp
 (6, 'Inferno Burger', 'Burger'),
 (6, 'Minute Maid', 'Drink'),
 (6, 'Pepper Burger', 'Burger'),
-(6, 'Powerade', 'Drink'),
 (6, 'Ranch Burger', 'Burger'),
 (6, 'Spicy Fries', 'Side'),
 (6, 'Veggie Burger', 'Burger'),
@@ -676,10 +616,9 @@ CREATE TABLE `user_comments` (
 --
 
 INSERT INTO `user_comments` (`Username`, `Comment`, `CommentDate`, `Selected`) VALUES
-('username1', 'That was one of the best burgers I\'ve had in a long time!', '2017-11-14 02:39:50', 'y'),
-('username1', 'Your burgers are the BEST!!!', '2017-11-22 00:58:20', 'n'),
-('username2', 'WOW! No word is fit for food THAT good.', '2017-11-14 02:39:50', 'y'),
-('username3', 'Your life\'s not complete until you\'ve been to Three Guys.', '2017-11-14 02:39:50', 'y');
+('owner1', 'That was one of the best burgers I\'ve had in a long time!', '2017-11-14 02:39:50', 'y'),
+('owner2', 'WOW! No word is fit for food THAT good.', '2017-11-14 02:39:50', 'y'),
+('owner3', 'Your life\'s not complete until you\'ve been to Three Guys.', '2017-11-14 02:39:50', 'y');
 
 -- --------------------------------------------------------
 
@@ -702,9 +641,35 @@ CREATE TABLE `user_information` (
 --
 
 INSERT INTO `user_information` (`Username`, `FirstName`, `LastName`, `Address`, `City`, `State`, `ZipCode`) VALUES
-('username1', 'First', 'Guy', '1st Guy Road', 'Kalamazoo', 'MI', 49007),
-('username2', 'Second', 'Guy', '2nd Guy Road', 'Kalamazoo', 'MI', 49007),
-('username3', 'Third', 'Guy', '3rd Guy Road', 'Kalamazoo', 'MI', 49007);
+('customer1', 'Kevin', 'Sharp', '111 Customer Avenue', 'Plainwell', 'MI', 49080),
+('customer2', 'Milton', 'Robbins', '222 Customer Avenue', 'Plainwell', 'MI', 49080),
+('customer3', 'Sammy', 'Logan', '333 Customer Avenue', 'Plainwell', 'MI', 49080),
+('employee1', 'Tyler', 'Huff', '111 Employee Drive', 'Three Rivers', 'MI', 49093),
+('employee10', 'Eduardo', 'Simpson', '1010 Employee Drive', 'Three Rivers', 'MI', 49093),
+('employee2', 'Amanda', 'Bridges', '222 Employee Drive', 'Three Rivers', 'MI', 49093),
+('employee3', 'Julio', 'Grant', '333 Employee Drive', 'Three Rivers', 'MI', 49093),
+('employee4', 'Jerome', 'Thompson', '444 Employee Drive', 'Three Rivers', 'MI', 49093),
+('employee5', 'Tom', 'Fisher', '555 Employee Drive', 'Three Rivers', 'MI', 49093),
+('employee6', 'Megan', 'McDaniel', '666 Employee Drive', 'Three Rivers', 'MI', 49093),
+('employee7', 'Gustavo', 'Ballard', '777 Employee Drive', 'Three Rivers', 'MI', 49093),
+('employee8', 'Anita', 'Morgan', '888 Employee Drive', 'Three Rivers', 'MI', 49093),
+('employee9', 'Johnnie', 'Hall', '999 Employee Drive', 'Three Rivers', 'MI', 49093),
+('manager1', 'Waylong', 'Dalton', '111 Manager Street', 'Battle Creek', 'MI', 49015),
+('manager10', 'Hadassah', 'Hartman', '1010 Manager Street', 'Battle Creek', 'MI', 49015),
+('manager123', 'Joanna', 'Shaffer', '123 Manager Street', 'Portage', 'MI', 49002),
+('manager2', 'Justine', 'Henderson', '222 Manager Street', 'Battle Creek', 'MI', 49015),
+('manager3', 'Abdullah', 'Lang', '333 Manager Street', 'Battle Creek', 'MI', 49015),
+('manager4', 'Marcus', 'Cruz', '444 Manager Street', 'Battle Creek', 'MI', 49015),
+('manager427', 'Jonathon', 'Sheppard', '427 Manager Street', 'Portage', 'MI', 49002),
+('manager5', 'Thalia', 'Cobb', '555 Manager Street', 'Battle Creek', 'MI', 49015),
+('manager6', 'Mathias', 'Little', '666 Manager Street', 'Battle Creek', 'MI', 49015),
+('manager7', 'Eddie', 'Randolph', '777 Manager Street', 'Battle Creek', 'MI', 49015),
+('manager8', 'Angela', 'Walker', '888 Manager Street', 'Battle Creek', 'MI', 49015),
+('manager8210', 'Pablo', 'Craig', '8210 Manager Street', 'Portage', 'MI', 49002),
+('manager9', 'Lia', 'Shelton', '999 Manager Street', 'Battle Creek', 'MI', 49015),
+('owner1', 'Matt', 'Peter', '111 Owner Road', 'Kalamazoo', 'MI', 49007),
+('owner2', 'Jonah', 'Kubath', '222 Owner Road', 'Kalamazoo', 'MI', 49007),
+('owner3', 'Greg', 'Smith', '333 Owner Road', 'Kalamazoo', 'MI', 49007);
 
 -- --------------------------------------------------------
 
@@ -722,19 +687,19 @@ CREATE TABLE `user_login` (
 --
 
 INSERT INTO `user_login` (`Username`, `Password`) VALUES
-('customer1', 'cust1Password'),
-('customer2', 'cust2Password'),
-('customer3', 'cust3Password'),
-('employee1', 'empee1Password'),
-('employee10', 'empee10Password'),
-('employee2', 'empee2Password'),
-('employee3', 'empee3Password'),
-('employee4', 'empee4Password'),
-('employee5', 'empee5Password'),
-('employee6', 'empee6Password'),
-('employee7', 'empee7Password'),
-('employee8', 'empee8Password'),
-('employee9', 'empee9Password'),
+('customer1', 'custo1Password'),
+('customer2', 'custo2Password'),
+('customer3', 'custo3Password'),
+('employee1', 'emplo1Password'),
+('employee10', 'emplo10Password'),
+('employee2', 'emplo2Password'),
+('employee3', 'emplo3Password'),
+('employee4', 'emplo4Password'),
+('employee5', 'emplo5Password'),
+('employee6', 'emplo6Password'),
+('employee7', 'emplo7Password'),
+('employee8', 'emplo8Password'),
+('employee9', 'emplo9Password'),
 ('manager1', 'manag1Password'),
 ('manager10', 'manag10Password'),
 ('manager123', 'manag123Password'),
@@ -773,12 +738,6 @@ CREATE TABLE `user_products` (
 --
 ALTER TABLE `employee_accounts`
   ADD PRIMARY KEY (`EmployeeID`,`Username`);
-
---
--- Indexes for table `employee_names`
---
-ALTER TABLE `employee_names`
-  ADD PRIMARY KEY (`EmployeeID`);
 
 --
 -- Indexes for table `employee_stores`
@@ -863,15 +822,15 @@ ALTER TABLE `user_products`
 --
 
 --
--- AUTO_INCREMENT for table `employee_names`
+-- AUTO_INCREMENT for table `ingredient_information`
 --
-ALTER TABLE `employee_names`
-  MODIFY `EmployeeID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10017;
+ALTER TABLE `ingredient_information`
+  MODIFY `IngredientID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT for table `order_user`
 --
 ALTER TABLE `order_user`
-  MODIFY `OrderID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `OrderID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `store_locations`
 --

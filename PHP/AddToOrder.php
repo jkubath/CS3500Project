@@ -58,7 +58,13 @@
 				$numIngredients++;
 			}
 		} else if (strcmp($_SESSION["currentItemType"], "drinks") == 0) {
-			$_SESSION["prices"][$_SESSION["currentItemNumber"]] = 2;
+			$sql = "SELECT ii.Price AS Price
+					FROM ingredient_information ii
+					WHERE ii.Name = '" . $_SESSION["orderItems"][$_SESSION["currentItemNumber"]] . "';";
+			$result = $pdo->query($sql);
+			while ($row = $result->fetch()) {
+				$_SESSION["prices"][$_SESSION["currentItemNumber"]] = $row["Price"];
+			}
 			$_SESSION["orderIngredients"][$_SESSION["currentItemNumber"]] = $_SESSION["orderItems"][$_SESSION["currentItemNumber"]];
 		} else if (strcmp($_SESSION["currentItemType"], "myBurgers") == 0) {
 			$_SESSION["prices"][$_SESSION["currentItemNumber"]] = 2;
